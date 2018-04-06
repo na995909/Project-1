@@ -2,63 +2,87 @@
 <html>
 <head>
 	<title>Near Home Project</title>
+	<!--Bootstrap Reference-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!--Jquery reference-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--Google API reference with personal API key for autocomplete-->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRGn0x2v8dGPOZXQOjqpervpxemEN_9k8&libraries=places"></script>
    
-    <!--Script Reference-->
+    <!--Project script reference-->
     <script src="assets/javascript/app.js"></script>
+    <!--Project style reference-->
+   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 
 </head>
 <body>
-	<div class="jumbotron">
-        <h1 class="text-center">NEAR HOME</h1>
+	<div class="header">
+		<h1>Near Home</h1>
     </div>
-
-
-    <div class="panel panel-primary">
+     <!--Background video from coverr.co (library)-->
+	<video class="cover_video" autoplay loop muted id="background">
+		<source src="assets/images/Healthy-Life.mp4" type="video/mp4">This browser does not display the video tag
+	</video>
+       
+	<!--Search panel for user's input-->
+    <div class="panel panel-primary transparent" id="search-panel">
         <div class="panel-heading">
-            <h3 class="panel-title"><strong>Points of Interest</strong></h3>
+            <h3 class="panel-title">Search</h3>
         </div>
        
             <div class="panel-body">
             	<form>
-                <div class="form-group">
-                  <label for="address-input">Address</label>
-                  <input style="width: 90%" class="form-control" id="address-input" type="text">
-                </div>
-               	<div class="form-group">
-				  <label for="sel1">Select Points of Interest:</label>
-				  <select class="form-control" id="sel1" style="width: 90%">
-				    <option value="restaurant">Restaurants</option>
-				    <option value="school">Schools</option>
-				    <option value="park">Parks/Recreation</option>
-				    <option value="shop">Shopping</option>
-				  </select>
+            	<div class="row">
+            		<!--Address input integrated with Google autocomplete API-->
+	                <div class="col-md-6 form-group">
+	                  <label for="address-input" class="ntr">Address</label>
+	                  <input class="form-control" id="address-input" type="text">
+	                </div>
+
+					<!--Dropdown list for points of interest-->                
+	               	<div class="col-md-5 form-group">
+					  <label for="sel1">Select Points of Interest</label>
+					  <select class="form-control" id="sel1" style="width: 90%">
+					    <option value="restaurant">Restaurants</option>
+					    <option value="school">Schools</option>
+					    <option value="park">Parks/Recreation</option>
+					    <option value="shop">Shopping</option>
+					  </select>
+					</div>
+					<!--Search Button-->
+					<div class="col-md-1">
+						<!--Opacity:0 used for full transparency.
+							In Bootstrap framework empty label holds no space, we want to allign search button with input boxes, that's the reason why we gave text value to the label and kept it transparent-->
+						<label style="opacity: 0;">Search</label> 
+						<button class="btn btn-primary" id="address-btn" type="search">Search</button>
+					</div>
 				</div>
-                <button class="btn btn-primary" id="address-btn" type="search">Search</button>
+                
               </form>
 
             </div>
 
     </div>
-     <div class="panel panel-primary">
+    <!--results panel kept hidden until first search accured-->
+     <div class="panel panel-primary hide" id="result-panel">
         <div class="panel-heading">
             <h3 class="panel-title"><strong>Results</strong></h3>
         </div>
-       
+       		
             <div class="panel-body">
+            	<!--Div class makes results table responsive-->
             	<div class="table-responsive">
-				  <table class="table table-striped">
-				    <thead>
-					    <tr>
-					      <th scope="col">Name</th>
-					      <th scope="col">Distance</th>
-					      <th scope="col">Google Map</th>
-					      <!--<th scope="col">Yahoo Map</th>-->
-					    </tr>
-					</thead>
+            		<!--Results Table-->			
+					<table class="table table-striped">
+					    <thead>
+						    <tr>
+						      <th scope="col">Name</th>
+						      <th scope="col">Distance</th>
+						      <th scope="col">Google Map</th>
+						    </tr>
+						</thead>
 					<tbody id="results">
 						
 					</tbody>
