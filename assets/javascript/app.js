@@ -66,6 +66,7 @@ $(document).ready(function(){
                 		var row = $("<tr>"+
 							"<td>"+res[i].name+"</td>"+
 							"<td>"+res[i].distance+"</td>"+
+							//constructing  Google Street View URL 
 							"<td><a href='https://www.google.com/maps/@?api=1&map_action=pano&viewpoint="+res[i].lat+","+res[i].lng+"' target='_blank'>"+res[i].name+"</a></td>"+
 						"</tr>");
 						//appending new row to results table
