@@ -14,11 +14,13 @@ Site Page:
 ### What is this?
 
 Real-Estate selling is a very niche market. For this reason, Realtor's typically specialize 
-on specific markets. But that presents challenges, due to this specialization they can run into issues when they try to sell a home outside of their specialized area.  
+on specific markets. But that presents challenges, due to this specialization they can run into issues when they try 
+to sell a home outside of their specialized area because they may not know the area as well as they should.
 
-This application allows Realtors to familiarize themselves with attractions and resources
-available, to the future homeowner, around a specific address. It provides immediate information on near by 
-resources and attractions such as Schools, Parks, Restaurants and Shopping Information.
+The **Near Home** application allows Realtors to familiarize themselves with an unknown market relatively quick. 
+**Near Home** will provide immediate information on near by resources and attractions such as Schools, Parks, 
+Restaurants and Shopping Information. By leveraging **Near Home**, Realtors will be able to expand their selling 
+opportunities and service more future homeowners. 
 
 ### Technology Stack
 * Coverr.co Library 
@@ -31,16 +33,19 @@ resources and attractions such as Schools, Parks, Restaurants and Shopping Infor
 
 ### Team Roles
 ##### *Nelly Ackerman*
-* Landing Page / API Implementation
-* Design Layout
+1. Landing Page
+1. API Implementation
+1. Design Layout
 
 ##### *Denis Gayvoronsky*
-* Design improvements
-* Testing & Site Validations
+1. Design improvements
+1. Functioal Testing
+1. Data Validations
 
 ##### *Alex Peralta*
-* Project Management
-* Firebase Setup
+1. Project Management
+1. Firebase Setup
+1. Design Layout
 
 
 
