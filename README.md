@@ -14,11 +14,10 @@ Site Page:
 ### What is this?
 
 Real-Estate selling is a very niche market. For this reason, Realtor's typically specialize 
-on specific markets. But that presents challenges, because due to this specialization 
-they can run into challenges when they try to sell a home outside of their specialized area.  
+on specific markets. But that presents challenges, due to this specialization they can run into issues when they try to sell a home outside of their specialized area.  
 
 This application allows Realtors to familiarize themselves with attractions and resources
-available around a particular address quickly. It provides immediate information on near by 
+available, to the future homeowner, around a specific address. It provides immediate information on near by 
 resources and attractions such as Schools, Parks, Restaurants and Shopping Information.
 
 ### Technology Stack
