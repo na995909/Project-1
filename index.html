@@ -102,7 +102,6 @@
 
 	<!-- Script -->
 	<script>
-        // START CODING BELOW!!
 
         // Initialize Firebase
         var config = {
@@ -124,15 +123,15 @@
 
         // Capture Button Click
         $("#address-btn").on("click", function() {
+
             // Don't refresh the page!
             event.preventDefault();
 
-            // YOUR TASK!!!
-            // Code in the logic for storing and retrieving the most recent user.
-            // Don't forget to provide initial data to your Firebase database.
+            //Capture the address entered and store it for entry into the database
             address = $("#address-input").val().trim();
 
-            database.ref().set({
+            //Update the Database with the address entered
+            database.ref().push({
                 address: address
             });
 
@@ -151,6 +150,7 @@
         }, function(errorObject) {
             console.log("Errors handled: " + errorObject.code);
         });
+
 	</script>
 
 </body>
