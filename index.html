@@ -2,11 +2,16 @@
 <html>
 <head>
 	<title>Near Home Project</title>
-	<!--Bootstrap Reference-->
+	<!--Bootstrap css Reference-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!--Jquery reference-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--Bootstrap js reference-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--Bootstrap pagination pager js library
+		http://botmonster.com/jquery-bootpag/
+    -->
+    <script src="assets/javascript/jquery.bootpag.min.js"></script>
     <!--Google API reference with personal API key for autocomplete-->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRGn0x2v8dGPOZXQOjqpervpxemEN_9k8&libraries=places"></script>
    
@@ -71,25 +76,26 @@
             <h3 class="panel-title"><strong>Results</strong></h3>
         </div>
        		
-            <div class="panel-body">
-            	<!--Div class makes results table responsive-->
-            	<div class="table-responsive">
-            		<!--Results Table-->			
-					<table class="table table-striped">
-					    <thead>
-						    <tr>
-						      <th scope="col">Name</th>
-						      <th scope="col">Distance</th>
-						      <th scope="col">Google Map</th>
-						    </tr>
-						</thead>
-					<tbody id="results">
-						
-					</tbody>
-				  </table>
-				</div>
-            </div>
-
+		<div class="panel-body">
+			<!--Div class makes results table responsive-->
+			<div class="table-responsive">
+				<!--Results Table-->			
+				<table class="table table-striped">
+				    <thead>
+					    <tr>
+					      <th scope="col">Name</th>
+					      <th scope="col">Distance</th>
+					      <th scope="col">Google Map</th>
+					    </tr>
+					</thead>
+				<tbody id="results">
+					
+				</tbody>
+			  </table>
+			</div>
+		</div>
     </div>
+    <!--Div that holds pager-->
+    <div class="mypager  text-center"></div>
 </body>
 </html>
