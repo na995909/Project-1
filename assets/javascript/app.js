@@ -41,7 +41,7 @@ $(document).ready(function(){
 		var queryURL = "https://services.gisgraphy.com/geoloc/search?format=json&lat="+lat+"&lng="+lng+"&radius=7000&"+
 		"&placetype=" + placetype;// + "&from=1&to=10";
 		//ajax call to load the first page of results, API returns only 10 results per page
-		ajaxCall(queryURL, 1, 2);
+		ajaxCall(queryURL, 1, 2,lat,lng);
 		
 	});
 });
@@ -49,8 +49,10 @@ $(document).ready(function(){
 query URL: URL for API call
 current page: current page number selected on pager 
 total pages: total pages parameter for pager
+lat: latitude of the location point
+lgn: longitude of the location point
 */
-function ajaxCall(queryURL, curr_page, total_pages){
+function ajaxCall(queryURL, curr_page, total_pages,lat,lng){
 	//calculated last pagination index
 	var end_index = curr_page*10;
 	//calculated first pagination index. Numbered from 1
@@ -84,6 +86,8 @@ function ajaxCall(queryURL, curr_page, total_pages){
 						"<td>"+res[i].distance+"</td>"+
 						//constructing  Google Street View URL 
 						"<td><a href='https://www.google.com/maps/@?api=1&map_action=pano&viewpoint="+res[i].lat+","+res[i].lng+"' target='_blank'>"+res[i].name+"</a></td>"+
+						//constructing Google directions URL
+						"<td><a href=\"https://www.google.es/maps/dir/'" + lat +"," + lng +"'/'" +res[i].lat+","+res[i].lng+"'\" target='_blank'>"+res[i].name+"</a></td>"+
 					"</tr>");
 					//appending new row to results table
 					$('#results').append(row);
@@ -102,7 +106,7 @@ function ajaxCall(queryURL, curr_page, total_pages){
 				   maxVisible: 10
 				// new event handler attached to pager   		
 				}).on('page', function(event, num){
-				    ajaxCall(queryURL, num, total_pages);
+				    ajaxCall(queryURL, num, total_pages,lat,lng);
 				});
             } else{
             	var row = $("<tr><td colspan='3'><strong>No Results Found</strong></td></tr>");
