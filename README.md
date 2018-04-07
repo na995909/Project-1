@@ -1,8 +1,10 @@
 # Team NorthATL
 
-##### Georgia Tech Coding Bootcamp
-##### Fullstack Web Development
-##### Project 1
+###### Georgia Tech Coding Bootcamp
+###### Fullstack Web Development
+###### Project 1
+Site Page:
+[Near Home Webapp](https://na995909.github.io/Project-1/)
 
 ### Our Team
 * Nelly Ackerman
@@ -19,11 +21,8 @@ This application allows Realtors to familiarize themselves with attractions and 
 available around a particular address quickly. It provides immediate information on near by 
 resources and attractions such as Schools, Parks, Restaurants and Shopping Information.
 
-Site Page:
-[Near Home Webapp](https://na995909.github.io/Project-1/)
-
 ### Technology Stack
-* Coverr.co Library
+* Coverr.co Library 
 * Bootstrap Library (Pagination / Responsive Layout)
 * jQuery Library
 * Google Autocomplete API
@@ -32,15 +31,15 @@ Site Page:
 * Ajax Calls to Pull APIs
 
 ### Team Roles
-##### Nelly Ackerman
+##### *Nelly Ackerman*
 * Landing Page / API Implementation
 * Design Layout
 
-##### Denis Gayvoronsky
+##### *Denis Gayvoronsky*
 * Design improvements
 * Testing & Site Validations
 
-##### Alex Peralta
+##### *Alex Peralta*
 * Project Management
 * Firebase Setup
 
