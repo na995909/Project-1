@@ -59,7 +59,7 @@
 					<!--Search Button-->
 					<div class="col-md-1">
 						<!--Opacity:0 used for full transparency.
-							In Bootstrap framework empty label holds no space, we want to allign search button with input boxes, that's the reason why we gave text value to the label and kept it transparent-->
+							In Bootstrap framework empty label holds no space, we want to align search button with input boxes, that's the reason why we gave text value to the label and kept it transparent-->
 						<label style="opacity: 0;">Search</label> 
 						<button class="btn btn-primary" id="address-btn" type="search">Search</button>
 					</div>
@@ -97,5 +97,61 @@
     </div>
     <!--Div that holds pager-->
     <div class="mypager  text-center"></div>
+
+	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+	<!-- Script -->
+	<script>
+        // START CODING BELOW!!
+
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyB-n_UoJfxqAGprrstEELf1K3jnLpt3BQ4",
+            authDomain: "nearhome-802e7.firebaseapp.com",
+            databaseURL: "https://nearhome-802e7.firebaseio.com",
+            projectId: "nearhome-802e7",
+            storageBucket: "",
+            messagingSenderId: "351433034735"
+        };
+
+        firebase.initializeApp(config);
+
+        // Create a variable to reference the database
+        var database = firebase.database();
+
+        // Initial Values
+        var address = "";
+
+        // Capture Button Click
+        $("#address-btn").on("click", function() {
+            // Don't refresh the page!
+            event.preventDefault();
+
+            // YOUR TASK!!!
+            // Code in the logic for storing and retrieving the most recent user.
+            // Don't forget to provide initial data to your Firebase database.
+            address = $("#address-input").val().trim();
+
+            database.ref().set({
+                address: address
+            });
+
+        });
+
+        // Firebase watcher + initial loader HINT: .on("value")
+        database.ref().on("value", function(snapshot) {
+
+            // Log everything that's coming out of snapshot
+            console.log(snapshot.val());
+
+            // For future use, change the HTML to reflect the list of addresses
+            $("#address-input").text(snapshot.val().address);
+
+            // Handle the errors
+        }, function(errorObject) {
+            console.log("Errors handled: " + errorObject.code);
+        });
+	</script>
+
 </body>
 </html>
