@@ -1,4 +1,4 @@
-# Team
+# Team NorthATL
 
 ##### Georgia Tech Coding Bootcamp
 ##### Fullstack Web Development
